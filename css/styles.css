@@ -163,6 +163,7 @@ ul {
   background-color: transparent;
   padding: 0;
   cursor: pointer;
+  line-height: 0;
 }
 
 .mobile-menu-block {
@@ -302,10 +303,10 @@ ul {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~HERO~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .hero-section {
-  max-width: 1440px;
+  max-width: 320px;
   margin: 0 auto;
   background-color: #2e2f42;
-  background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg.jpg);
+  background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg-mob.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -315,7 +316,7 @@ ul {
 
 @media screen and (min-resolution: 2dppx), (min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2) {
   .hero-section {
-    background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg-2x.jpg);
+    background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg-mob-2x.jpg);
   }
 }
 
@@ -393,11 +394,12 @@ ul {
 .team-list {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 72px;
-  padding: 0 12px;
 }
 
 .team-card {
+  width: 264px;
   background-color: #ffffff;
   border-radius: 0 0 4px 4px;
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
@@ -505,8 +507,10 @@ ul {
   background-color: #2e2f42;
 }
 
-.footer-info {
-  margin-bottom: 72px;
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 72px;
 }
 
 .footer-logo {
@@ -539,7 +543,6 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 72px;
 }
 
 .footer-socials-heading {
@@ -594,6 +597,11 @@ ul {
   margin-bottom: 16px;
 }
 
+.footer-label {
+  display: block;
+  margin-bottom: 16px;
+}
+
 .footer-input {
   font-size: 12px;
   line-height: 2;
@@ -607,7 +615,6 @@ ul {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   opacity: 0.3;
   padding: 0 16px;
-  margin-bottom: 16px;
 }
 
 .footer-input::placeholder {
@@ -950,8 +957,16 @@ ul {
   }
 
   .hero-section {
+    max-width: 768px;
     padding-top: 112px;
     padding-bottom: 112px;
+    background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg-tab.jpg);
+  }
+
+  @media screen and (min-resolution: 2dppx), (min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2) {
+    .hero-section {
+      background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg-tab-2x.jpg);
+    }
   }
 
   .hero-heading {
@@ -978,14 +993,10 @@ ul {
 
   .team-list {
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
     column-gap: 24px;
     row-gap: 64px;
-    padding: 0 92px;
-  }
-
-  .team-card {
-    width: calc((100% - 24px) / 2);
   }
 
   .portfolio-list {
@@ -996,10 +1007,20 @@ ul {
     width: calc((100% - 24px) / 2);
   }
 
+  .footer-container {
+    max-width: 530px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 24px;
+  }
+
   .footer-wrap {
     display: flex;
     gap: 24px;
-    margin-left: 92px;
+  }
+
+  .footer-info {
+    margin-bottom: 0;
   }
 
   .footer-logo {
@@ -1008,10 +1029,6 @@ ul {
 
   .footer-socials-heading {
     align-self: flex-start;
-  }
-
-  .subscribe-block {
-    margin-left: 92px;
   }
 
   .footer-subscribe-heading {
@@ -1023,9 +1040,12 @@ ul {
     gap: 24px;
   }
 
+  .footer-label {
+    margin-bottom: 0;
+  }
+
   .footer-input {
     width: 264px;
-    margin-bottom: 0;
   }
 
   .footer-button {
@@ -1071,8 +1091,16 @@ ul {
   }
 
   .hero-section {
+    max-width: 1440px;
     padding-top: 188px;
     padding-bottom: 188px;
+    background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg.jpg);
+  }
+
+  @media screen and (min-resolution: 2dppx), (min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2) {
+    .hero-section {
+      background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg-2x.jpg);
+    }
   }
 
   .hero-heading {
@@ -1130,11 +1158,8 @@ ul {
   .footer-container {
     display: flex;
     align-items: baseline;
-  }
-
-  .footer-wrap {
-    margin-left: 0;
-    gap: 0;
+    flex-wrap: nowrap;
+    column-gap: 0;
   }
 
   .footer-info {
